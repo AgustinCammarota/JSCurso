@@ -163,3 +163,475 @@ const producto1 = 'Pizza',
     console.log(meses.indexOf('Abril')); //Para buscar datos dentro de un arreglo
     console.log(meses.sort());//Ordena el arreglo de String
     console.log(number1)
+
+    //Crear un Objeto: 
+    const persona = {
+        nombre: 'Agustin', 
+        apellido: 'Cammarota', 
+        profesion: 'Programador',
+        email: 'agustincammarota@hotmail.com',
+        edad: 20,
+        musica: ['Trance', 'Rock', 'Pop'],
+        hogar: {
+            ciudad: 'Buenos Aires',
+            pais: 'Argentina'
+        },
+        fechaCumple: function() {
+            return new Date().getFullYear();
+        }
+    }
+
+    persona.musica.push('Alternativo');
+    console.log(persona);
+    console.log(persona.nombre);
+    console.log(persona.hogar.ciudad);
+    console.log(persona.fechaCumple());
+
+    //Arreglo de objetos:
+    const autos = [
+        {
+            modelo: 'Mustang', motor: 6.2
+        },
+        {
+            modelo: 'Camaro', motor: 6.1
+        },
+        {
+            modelo: 'Challenger', motor: 6.3
+        }
+    ];
+//Imp los valores de una constante si se pueden modificar, solo que se debe acceder a los valores individuales. 
+//No se pueden reasignar las constantes. 
+    for(let i = 0; i < autos.length; i++) {
+        console.log(autos[i]);
+        console.log(autos[i].modelo);
+    }
+
+    console.log(autos.length);
+
+//Funciones:
+function saludar() {
+    console.log('Hola agustin');
+}
+
+//Se puede declarar un valor de parametro por defecto
+function saludar(nombre = 'agustin') {
+    console.log(`Hola ${nombre}`);
+}
+
+function sumar(a, b) {
+    console.log(a + b);
+    return a + b;
+}
+
+saludar('Juan');
+sumar(1, 2);
+suma = sumar(3, 4);
+
+const divicion = function(a, b) {
+    return (a / b);
+}
+
+console.log(divicion(4, 6));
+
+//IIFE permite ejecutar una funcion sin llamarla 
+
+(function (tecnologia) {
+    console.log(`Aprendiendo ${tecnologia}`);
+})('JS');
+
+//Metodos de propiedad, son cuando una funcion se pone dentro de un objeto
+const musica = {
+    reproducir: function(id) {
+        console.log(`Reproducir musica cancion id ${id}`);
+    },
+    pausar: function() {
+        console.log(`Pausa la musica`);
+    }
+}
+
+musica.reproducir(30);
+musica.pausar();
+
+//Try catch: (Intenta siempre ejecutar el try, el catch captura los errores que impiden la ejecucion del try y el finnally se ejecutara siempre).
+
+try {
+    algo();
+} catch(error) {
+    console.log(error);
+} finally {
+    console.log('No le importa, ejecuta de todos modos');
+}
+
+function obtenerClientes() {
+    console.log('Descargando...');
+
+    setTimeout(function() {
+        console.log('Completo');
+    }, 3000);
+}
+
+obtenerClientes();
+
+//Fechas:
+const diaHoy = new Date(); //Devuelve la fecha actual
+let navidad = new Date('12-25-2017');
+let valor2;
+
+valor2 = diaHoy.getMonth();//mes
+valor2 = diaHoy.getDate();//dia
+valor2 = diaHoy.getDay();//dia 
+valor2 = diaHoy.getFullYear();//anio
+valor2 = diaHoy.getMinutes();//minutos
+valor2 = diaHoy.getHours();//horas
+valor2 = diaHoy.getTime();//milisegundos
+
+valor2 = diaHoy.getFullYear();
+valor2 = diaHoy.setFullYear(2016); //Cambiar fechas
+valor2 = diaHoy.getFullYear();
+
+console.log(valor2);
+
+//If if/else:
+
+const edad = 19;
+
+if(edad > 18) {
+    console.log('Si puedes entrar al sitio');
+} else {
+    console.log('No se puede entrar al sitio');
+}
+
+//Comprobar que una variable tiene un valor:
+
+let puntaje;
+
+if(puntaje) {
+    console.log(`El puntaje fue de ${puntaje}`);
+} else {
+    console.log('No hay puntaje');
+}
+
+let horaActual = 22;
+// && Y (Se cumplen ambas) / || Or (Se cumple una o la otra)
+if(horaActual > 0 && horaActual <= 10) {
+    console.log('Buenos Dias!');
+} else if (horaActual > 10 && horaActual <= 18) { //Multiples condiciones
+    console.log('Buenas tardes!');
+} else {
+    console.log('Buenas noches!');
+}
+
+let efectivo = 300,
+    credito = 300,
+    totalCarrito = 500;
+
+if(totalCarrito < efectivo || totalCarrito < credito) {
+    console.log('Puedo pagar');
+} else {
+    console.log('No puedo pagar');
+}
+
+const logueado = true;
+
+//Ternario if
+console.log(logueado === true ? 'Si se logeo': 'No se logeo');
+
+//Switch (Permite tener una forma mas ordenada para comprobar multiples condiciones)
+
+const metodoPago = 'efectivo';
+
+switch(metodoPago) {
+    case 'efectivo':
+        console.log(`El usuario pago con ${metodoPago}`);
+        break;
+    case 'cheque':
+        console.log(`El usuario pago con ${metodoPago}`);
+        break;
+    case 'tarjeta':
+        console.log(`El usuario pago con ${metodoPago}`);
+        break;
+    default: 
+    console.log('El metodo de pago no es soportado');
+    break;
+}
+
+// For Loops 
+for(let i = 0; i < 10; i++) {
+    if(i == 5) {
+        console.log('Voy en el 5');
+        break; //Detiene la ejecucion si se cumple el if, Tambien existe el continuos 
+    }
+    console.log(`Numero: ${i}`);
+}
+
+//While
+let i = 0;
+
+while (i < 10) {
+    if(i === 5) {
+        console.log('Cinco');
+        i++;
+        break;
+    }
+    console.log(`Numero: ${i}`);
+    i++;
+}
+
+//DoWhile corre el codigo al menos una vez aunque la condicion no se cumpla
+let u = 0;
+
+do {
+    console.log(`Numero: ${u}`);
+    u++;
+} while (u < 20);
+
+//ForEach:
+const pendientes = ['Tarea', 'Aprender', 'JavaScript', 'Todo el dia'];
+
+pendientes.forEach(function(pendiente) {
+    console.log(`${pendiente}`);
+});
+
+//Map para recorrer un arreglo de objetos:
+const carrito = [
+    {id: 1, producto: 'Libro1'},
+    {id: 2, producto: 'Libro2'},
+    {id: 3, producto: 'Libro3'},
+    {id: 4, producto: 'Libro4'}
+];
+
+const nombreProducto = carrito.map(function(carrito) {
+    return carrito.producto;
+});
+
+console.log(nombreProducto);
+
+//Iteradores:
+const datos = new Map();
+
+datos.set('nombre', 'juan');
+datos.set('profesion', 'desarrollador');
+
+console.log(datos);
+
+//Entries iterador:
+for(let entrada of datos.entries()) { //Regresa llave y valor
+    console.log(entrada);
+}
+
+for(let entrada of datos) { //Regresa solo el valor
+    console.log(entrada);
+}
+
+for(let entrada of datos.keys()) { //Regresa la llave
+    console.log(entrada);
+}
+
+//En el window podemos encontrar muchisima informacion tanto del navegador como del usuario
+let ubicacion;
+ubicacion = window.location;//Info del usuario
+ubicacion = window.navigator;//Info del navegador
+
+console.log(ubicacion);
+
+//Scope:
+//Es la visibilidad que tiene un valor en js dentro de una funcion, un bloque..
+var a = 'a';
+let b = 'b';//variables globales que pueden ser accedidas en cualquier parte del codigo.
+const c = 'c';
+
+function funcionScope() {
+    var a = 'A';
+    let b = 'B';//Solo se puede acceder dentro de la funcion.
+    const c = 'C';
+    console.log('Funcion ' + a, b, c);
+}funcionScope();
+
+if(true) {
+    var a = 'AA'; //Es el unico que reescribe el valor global de las variables
+    let b = 'BB';//Por las demas solo se puede acceder dentro del bloque
+    const c = 'CC';
+    console.log('Bloque ' + a, b, c);
+}
+
+console.log('Globales ' + a, b, c);
+
+//////////////////////////DOM///////////////////////////
+//Cuando tenemos un archivo html, todos sus valores se encuentran dentro del Document Object ej body, head.... Dentro de este tenemos el root(Todos los elementos del html) Como seria el head(title, texto, ...) y el body(nav, h1 ..) 
+
+let elemento1;
+
+elemento1 = document.head;
+elemento1 = document;
+elemento1 = document.body;
+elemento1 = document.domain;
+console.log(elemento1);
+
+/////////////////Formas de Crear un Objeto///////////
+
+//1 Forma sencilla 
+//This me permite acceder a los atributos o propiedades o metodos que quiero leer de un objeto o una clase
+const cliente = {
+    nombre: 'Juan',
+    saldo: 200,
+    tipoCliente: function() {
+        let tipo;
+
+        if(this.saldo > 1000) {
+            tipo = 'Gold';
+        }else {
+            tip = 'Normal';
+        }
+        return tipo;
+    }
+}
+console.log(cliente.tipoCliente);
+
+//2 Forma Compleja antes Anterior  a JSModerno
+function Cliente(nombre, saldo) //Constructor del objeto, permite pasar argumentos al momento de crear un objeto. Se pasa para inicializar el objeto
+{
+    this.nombre = nombre;
+    this.saldo = saldo;
+    this.tipoCliente = function() {
+        let tipo;
+
+        if(this.saldo > 1000) {
+            tipo = 'Gold';
+        } else {
+            tipo = 'Normal';
+        }
+        return tipo;
+    }
+}
+//Un objeto es como un plano comun que deben seguir la creacion de nuevos objetos
+const persona = new Cliente('Perdro', 2000);
+const persona2 = new Cliente('Juan', 2000); //Permite crear mas de un objeto del mismo tipo 
+(Cliente)
+console.log(persona);
+
+//String
+const nombre1 = 'Pedro';
+const nombre2 = new String('Pedro'); //Siempre que uso el operador new estoy creando un objeto
+
+console.log(typeof nombre2);
+
+//Numeros
+const numerO1 = 20;
+const numerO2 = new Number(20);
+console.log(typeof numerO2);
+
+//Boolean
+const boolean1 = true;
+const boolean2 = new Boolean(true);
+console.log(typeof boolean2);
+
+////Prototipos  ante de JSModerno//////
+//Un prototipo es una funcion que tiene un determinado objeto, estos se pueden crear y agregar a algun objeto. 
+//1.Permite tener un codigo mas organizado al definir las funciones por fuera de la clase. 
+//2. Permite que esten disponibles para un objeto particular.
+
+function Personaje(nombre, saldo) {
+    this.nombre = nombre;
+    this.saldo = saldo;
+    // this.clasificarTipo = function() {
+        // let tipo;
+        // if(this.saldo > 1000) {
+            // tipo = 'Gold';
+        // } else {
+            // tipo = 'Normal';
+        // }
+        // return tipo;
+    // }
+}
+
+//Crear Prototipo (Funcionalidad por fuera del Objeto)
+Personaje.prototype.clasificarTipo = function() {
+    let tipo;
+    if(this.saldo > 500) {
+        tipo = 'Gold';
+    }else {
+        tipo = 'Normal';
+    }
+    return tipo;
+} 
+//Prototipo que imprime saldo y nombre
+Personaje.prototype.nombrePersojaSaldo = function() {
+    return `Nombre: ${this.nombre}, Tu saldo es de ${this.saldo} tipo cliente ${this.
+clasificarTipo()}`;
+}
+
+//Prototipo retirar saldo
+Personaje.prototype.retirarSaldo = function(retiro) {
+    return this.saldo -= retiro;
+}
+
+function Empresa(nombre, saldo, telefono, tipo) {
+    Personaje.call(this, nombre, saldo);//Heredar atriutos de la clase padre
+    this.telefono = telefono;
+    this.tipo = tipo;
+}
+
+Empresa.prototype = Object.create(Personaje.prototype); //Heredar prototipo
+
+const personaje = new Personaje('Agustin', 100);
+const personaje2 = new Personaje('Luciana', 400);
+const empresa = new Empresa('Udemy', 100000, 122121, 'Educacion');
+
+console.log(personaje.clasificarTipo());
+console.log(personaje.nombrePersojaSaldo());
+personaje2.retirarSaldo(200);
+console.log(empresa);
+console.log(empresa.nombrePersojaSaldo());
+
+
+//Crear clases JSModerno ES6
+class Empleado {
+ constructor(nombre, apellido, saldo) {
+    this.nombre = nombre;
+    this.apeliddo = apellido;
+    this.saldo = saldo;
+ }   
+ imprimirSaldo() {
+     return `Hola ${this.nombre}, tu saldo es de ${this.saldo}`;
+ }
+ tipoEmpleado() {
+     let tipo;
+     if(this.saldo > 1000) {
+         tipo = 'Gold';
+     }else {
+         tipo = 'Normal';
+     }
+     return tipo;
+ }
+ static bienvenida() { //No requieren crear una nueva instancia
+     return `bienvenido al cajero`;
+ }
+}
+//Cualquier metodo se agrega automaticamente al proto
+
+const maria = new Empleado('Marias', 'Peez', 1000);
+console.log(maria.imprimirSaldo());
+console.log(maria.tipoEmpleado());
+//estatico 
+console.log(Empleado.bienvenida());
+
+//Herencia en ES6 
+
+class Empresas extends Empleado {
+    constructor(nombre, saldo, telefono, tipo) {
+        super(nombre, saldo); //Para leer los valores del constructor padre
+        this.telefono = telefono; 
+        this.tipo = tipo;
+    }
+    static bienvenida() { //Para sobreescribir un metodo, basta con definirlo con el mismo 
+nombre.
+            return `bienvenido al cajero de la empresa`;
+        }
+}
+
+const empresas = new Empresas('Empres1', 10000, 344234234, 'Construccion');
+
+console.log(empresas);
+console.log(empresas.tipoEmpleado()); //Puedo acceder a metodos de la clase hija sin necesidad de agregar nada al prototype
+console.log(Empresas.bienvenida());
+
