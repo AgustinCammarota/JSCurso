@@ -1,6 +1,5 @@
 ///////////////////Destructuring//////////////////////////////////////
 //Es un codigo que te ayuda a extraer valores de un objeto.
-
 const clientes = {
     nombre : 'Alejandra',
     tipo : 'Premium',
@@ -25,8 +24,9 @@ let {nombre} = clientes; //Con Destructuring solo busca un objeto o un arreglo
 console.log(nombre);
 
 //Acceder a un objeto
-let {datos: {ubicacion} } = clientes;
-console.log(ubicacion.ciudad);
+let {datos: {ubicacion: {ciudad}} } = clientes;
+let {nombre, tipo, datos: {ubicacion: {ciudad, pais}, cuenta: {desde, saldo}}, movimientos: [ , , , fecha4]} = clientes;
+console.log(ciudad);
 
 let {datos: {cuenta} } = clientes;
 console.log(cuenta.saldo);
@@ -41,7 +41,7 @@ const  ciudades = ['Londres', 'New York', 'Madrir', 'Paris'];
 const [ , , , paris] = ciudades;
 console.log(paris);
 
-const [londres, nuevaYork , ,] = ciudades;
+const [londres, nuevaYork, ,] = ciudades;
 console.log(londres);
 console.log(nuevaYork);
 
@@ -79,7 +79,7 @@ reservacion(
 );
 
 //////////////Symbol//////////////
-//Es  un nuevo tipo de dato primitivo. Cada uno que se genera es unico en la ejecucion de java.
+//Es  un nuevo tipo de dato primitivo. Cada uno que se genera es unico en la ejecucion de Js.
 //Son propiedades privadas.
 
 const simbolo = Symbol();
@@ -129,9 +129,7 @@ console.log(arregloCarrito);
 //////////////////////////MAP////////////////////////////
 //Son listas ordenadas que almacenan el valor como llave y valor (par). Evista duplicados al igual que el SET.
 
-let cliente = new Map(
-    [['Rico', 'si']] //Valor por defecto
-);
+let cliente = new Map([['Rico', 'si']]); //Valor por defecto
 
 cliente.set('nombre', 'Juan');
 cliente.set('tipo', 'Premium');
@@ -205,3 +203,6 @@ console.log(expReg.test(valor));
 expReg = /\w+/;
 valor = 'Mensaje de prueba 23231'
 console.log(expReg.test(valor));
+
+
+

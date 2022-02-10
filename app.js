@@ -1,4 +1,4 @@
-//let edad = prompt('Cual es tu edad?');prompt, permite enviar mensajes por pantalla
+// let edad = prompt('Cual es tu edad?'); //prompt, permite enviar mensajes por pantalla
 //let año = confirm('Desea eliminar?'); confirm, mensaje de confirmacion.
 
 //console.log("Enviado a la consolas"); console, permite enviar contenido a la consola. 
@@ -31,7 +31,7 @@ console.log(mensaje.indexOf('dia')); //me permite encontrar un caracter en el st
 //Si no lo encuentra devuelve -1 y si lo encuentra devuelve la posicion 
 
 console.log(mensaje.substring(0, 11)); //Para que corte la cadena de texto 
-console.log(mensaje.split(' ')); //Permite separar una cadena de texto 
+console.log(mensaje.split(' ')); //Permite separar una cadena de texto, lo devuelve como un arreglo.
 console.log(mensaje.replace('Un', 'Muchos'));// Permite replazar un caracter por otro
 console.log(mensaje.includes('muy')); //Si encuentra el valor retorna true sino false
 
@@ -144,7 +144,7 @@ const producto1 = 'Pizza',
     meses.push('Abril'); // para insertar un elemento al final del arreglo
     meses.unshift('Mes 0'); //Para insertar un elemento al inicio del arreglo
     meses.shift();//Eliminar el primer elemento;
-    meses.pop();//Eliminar el ultimo momento;
+    meses.pop();//Eliminar el ultimo elemento;
     meses.splice(2, 1); //Elimina la posicion pasada del primero parametro
     number1[0] = 4; //El arreglo completo no puede ser reasignado pero los valores particulares si (constante)
     
@@ -180,7 +180,6 @@ const producto1 = 'Pizza',
             return new Date().getFullYear();
         }
     }
-
     persona.musica.push('Alternativo');
     console.log(persona);
     console.log(persona.nombre);
@@ -239,6 +238,7 @@ console.log(divicion(4, 6));
     console.log(`Aprendiendo ${tecnologia}`);
 })('JS');
 
+
 //Metodos de propiedad, son cuando una funcion se pone dentro de un objeto
 const musica = {
     reproducir: function(id) {
@@ -278,7 +278,6 @@ let navidad = new Date('12-25-2017');
 let valor2;
 
 valor2 = diaHoy.getMonth();//mes
-valor2 = diaHoy.getDate();//dia
 valor2 = diaHoy.getDay();//dia 
 valor2 = diaHoy.getFullYear();//anio
 valor2 = diaHoy.getMinutes();//minutos
@@ -505,8 +504,7 @@ function Cliente(nombre, saldo) //Constructor del objeto, permite pasar argument
 }
 //Un objeto es como un plano comun que deben seguir la creacion de nuevos objetos
 const persona = new Cliente('Perdro', 2000);
-const persona2 = new Cliente('Juan', 2000); //Permite crear mas de un objeto del mismo tipo 
-(Cliente)
+const persona2 = new Cliente('Juan', 2000); //Permite crear mas de un objeto del mismo tipo (Cliente)
 console.log(persona);
 
 //String
@@ -588,7 +586,7 @@ console.log(empresa.nombrePersojaSaldo());
 class Empleado {
  constructor(nombre, apellido, saldo) {
     this.nombre = nombre;
-    this.apeliddo = apellido;
+    this.apellido = apellido;
     this.saldo = saldo;
  }   
  imprimirSaldo() {
@@ -623,8 +621,7 @@ class Empresas extends Empleado {
         this.telefono = telefono; 
         this.tipo = tipo;
     }
-    static bienvenida() { //Para sobreescribir un metodo, basta con definirlo con el mismo 
-nombre.
+    static bienvenida() { //Para sobreescribir un metodo, basta con definirlo con el mismo nombre.
             return `bienvenido al cajero de la empresa`;
         }
 }

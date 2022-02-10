@@ -1,0 +1,20 @@
+//////////////////////MODULOS/////////////////////////
+---Un modulo en programacion nos va a permitir agrupar funcionalidades relacionadas en un mismo archivo, permitiendo que
+el proyecto sea facil de mantener y este mejor organizado.
+
+---La ventaja principal de un modulo es que prodremos utilizarlo unicamente donde sera requerido, dejando el resto del
+programa oculto para el resto de codigo y tambien re-utilizar codigo.
+
+---Dividir el codigo en pequeños archivos con funcionalidad relacionada. Un modulo puede ser utilizado facilmente en otra aplicacion.
+
+///DEPENDENCIA: Un modulo puede y debe estar conectado con otro modulo, esa relacion se conoce como la dependencia.
+Si un modulo requiere una pieza de otro modulo, se dice que "depende de ese modulo".
+
+
+ <script src="ES6.js"></script> // Forma mas comun, pero tiene algunos problemas:
+1) Cada Script es un llamado Http lo cual hace el sitio web mas lento.
+2) Casa Script detiene la ejecucion mientras se descarga.
+3) El manejo de dependencias es manual.
+
+//----------Webpack es la mejor opcion para crear modulos y bundlers, veremos como hacerlo con ES6, de forma nativa antes de
+            //probar webpack.
